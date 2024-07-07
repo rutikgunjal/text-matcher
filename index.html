@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Matcher</title>
+    <style>
+        .app-heading{
+            text-align: center;
+            
+        }
+        .text-container{
+            display: flex;
+            justify-content: space-around;
+            background-color: #c5c9cbbf;
+             font-size: 10px;
+             padding: 10px;
+             border-radius: px;
+             border: 3px solid #374052cf; 
+        }
+        .input-text{
+            width: 100px;
+            height:10px;
+        }
+        .input-text:hover{
+            box-shadow: 0 0 3px 3px grey;
+        }
+        .result{
+            text-align: center;
+        }
+        .card{
+            width:360px;;
+            background-color:#ec9e90;
+            padding:5px 10px;
+            margin: 40px;
+            box-shadow: 0 0 5px 5px #0f0e0e;
+        }
+        .app-container{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <div class="app-container">
+        <h1 class="app-heading">Text Matcher</h1>
+        <div class="text-container">
+           <input type="text" class="input-text" id="input1" onkeyup="comparetext()">
+           <input type="text" class="input-text" id="input2" onkeyup="comparetext()">
+        </div>
+        <p class="result" id="match-result"></p>
+    </div>
+    <script>
+      function comparetext()
+      {
+        const input1Element = document.getElementById("input1")
+        const input2Element = document.getElementById("input2")
+
+        const resultElement = document.getElementById("match-result")
+
+        if(input1Element.value == input2Element.value){
+            resultElement.innerText = "Matched!!!!"
+            resultElement.style.color = "green"
+        }
+        else{
+             resultElement.innerText = "Not Matched!!!!"
+            resultElement.style.color = "red"
+        }
+      }
+    </script>
+</body>
+</html>
